@@ -38,7 +38,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/abc_ic_search" />
+            android:src="@drawable/abc_ic_search" 
+            android:onClick="goToSearch"/>
 
         <ImageButton
             android:id="@+id/fav"
@@ -66,7 +67,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:src="@android:drawable/sym_action_chat" />
+            android:src="@android:drawable/sym_action_chat" 
+            android:onClick="goToAllTweets"/>
     </LinearLayout>
 
     <ListView

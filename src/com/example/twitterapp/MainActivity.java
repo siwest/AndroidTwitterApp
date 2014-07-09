@@ -52,6 +52,16 @@ public class MainActivity extends Activity  {
 		 startActivity(goToNextActivity);	
 	
 	 }
+	 public void goToAllTweets(View view) {
+		 Intent goToNextActivity = new Intent(getApplicationContext(), MainActivity.class);
+		 startActivity(goToNextActivity);	
+	
+	 }
+	 public void goToSearch(View view) {
+		 Intent goToNextActivity = new Intent(getApplicationContext(), SearchActivity.class);
+		 startActivity(goToNextActivity);	
+	
+	 }
 	
 	
 	

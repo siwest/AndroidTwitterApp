@@ -11,28 +11,34 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Spinner;
 
-public class ProfileActivity extends Activity  {
+public class SearchActivity extends Activity  {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.profile_page);
+		setContentView(R.layout.search_page);
 		
-		 
-		 // To do:  method for isLoggedIn?   ==> If true, go to MainActivity to view tweets, else log in
-        
 		
+		
+		Spinner trendSpinner = (Spinner) findViewById(R.id.trends);
+		Spinner peopleSpinner = (Spinner) findViewById(R.id.people);
+
+		
+		
+		//trendSpinner.setOnItemSelectedListener(this);
+	
 	}
 	
-
-	 public void goToProfile(View view) {
+	
+	public void goToProfile(View view) {
 		 Intent goToNextActivity = new Intent(getApplicationContext(), ProfileActivity.class);
 		 startActivity(goToNextActivity);	
 	
 	 }
 	 public void goToAllTweets(View view) {
-		 Intent goToNextActivity = new Intent(getApplicationContext(), MainActivity.class);
+		 Intent goToNextActivity = new Intent(getApplicationContext(), SearchActivity.class);
 		 startActivity(goToNextActivity);	
 	
 	 }
@@ -41,6 +47,5 @@ public class ProfileActivity extends Activity  {
 		 startActivity(goToNextActivity);	
 	
 	 }
-
 	
 }

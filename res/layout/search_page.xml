@@ -63,7 +63,7 @@
             android:src="@drawable/at_sign_unselected" />
 
         <ImageButton
-            android:id="@+id/alltweets"
+            android:id="@+id/all_tweets"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -79,67 +79,104 @@
         android:layout_alignParentTop="true"
         android:background="@drawable/background"
         android:orientation="vertical" 
+        android:paddingTop="120dp"
+        android:paddingRight="20dp"
+         android:paddingLeft="20dp"
         >
         
-          <TextView
-            android:id="@+id/this_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:paddingBottom="15dp"
-            android:paddingTop="30dp"
-            android:textSize="40sp"
-            android:text="Fname Lname" >
-            <requestFocus android:layout_width="match_parent" />
-        </TextView>
-        
-         <ImageView
-            android:id="@+id/this_avatar"
-            android:layout_width="180dp"
-            android:layout_height="180dp"            
-            android:paddingBottom="15dp"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/avatar_selected" />
-         
-         <TextView
-            android:id="@+id/user_since"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+          <EditText
+            android:id="@+id/keywords"
+            android:layout_width="fill_parent"
+            android:layout_height="200sp"
             android:layout_gravity="center_horizontal"
             android:textSize="24sp"
-            android:text="User since:  March 1 2014" >
+            android:background="#FFFFFF"
+            android:text="   Keywords" >
             <requestFocus android:layout_width="match_parent" />
-        </TextView>
-        <TextView
-            android:id="@+id/user_num_tweets"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:paddingBottom="30dp"
-            android:textSize="24sp"
-            android:text="Total tweets:  87" >
-            <requestFocus android:layout_width="match_parent" />
-        </TextView>
+        </EditText>
         
-        <TextView
-            android:id="@+id/user_about"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:paddingBottom="20dp"
-            android:textSize="26sp"
-            android:text="About: I like surfing and playing the ukulele" >
-            <requestFocus android:layout_width="match_parent" />
-        </TextView>
-        
-          
-	    <ListView
-	        android:layout_width="fill_parent"
-	        android:layout_height="fill_parent"
+        <LinearLayout
 	        android:layout_toRightOf="@+id/leftpane"
-	        android:background="#000000"
-	        android:scrollbarStyle="outsideOverlay" >
-	    </ListView>
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:paddingBottom="30dp"
+	        android:paddingTop="30dp"
+	        android:layout_gravity="center_horizontal"
+	        android:orientation="horizontal"  >
+	         <EditText
+	            android:id="@+id/start_date"
+	            android:layout_width="200sp"
+	            android:layout_height="100sp"
+	            android:layout_gravity="center_horizontal"
+	            android:textSize="24sp"
+	            android:background="#FFFFFF"
+	            android:text="   Start date" >
+	            <requestFocus android:layout_width="match_parent" />
+	        </EditText>
+	        <LinearLayout
+		        android:layout_toRightOf="@+id/leftpane"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:paddingLeft="30dp"
+		        android:orientation="horizontal"  >
+	        <EditText
+	            android:id="@+id/end_date"
+	            android:layout_width="200sp"
+	            android:layout_height="100sp"
+	            android:layout_gravity="center_horizontal"
+	            android:textSize="24sp"
+	            android:paddingLeft="15dp"
+	            android:background="#FFFFFF"
+	            android:text="   End date" >
+	            <requestFocus android:layout_width="match_parent" />
+	        </EditText>
+	        </LinearLayout>
+	    </LinearLayout>
+        
+        <EditText
+            android:id="@+id/location"
+            android:layout_width="fill_parent"
+            android:layout_height="100sp"
+            android:layout_gravity="center_horizontal"
+            android:textSize="24sp"
+            android:background="#FFFFFF"
+            android:text="   Zip code" >
+        </EditText>
+        
+        
+        
+        <TextView
+            android:id="@+id/trends_Label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:paddingTop="30dp"
+            android:text="   Browse trends" >
+            <requestFocus android:layout_width="match_parent" />
+        </TextView>
+      
+        <Spinner
+            android:id="@+id/trends"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+            android:textSize="24sp"
+            android:text="Browse trends"/>
+         <TextView
+            android:id="@+id/people_Label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="30dp"
+            android:textSize="24sp"
+            android:text="   Find People" >
+            <requestFocus android:layout_width="match_parent" />
+        </TextView>
+         <Spinner
+            android:id="@+id/people"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+            android:textSize="24sp"
+            android:text="Find people"/>
+         
     </LinearLayout>
 
 </RelativeLayout>
