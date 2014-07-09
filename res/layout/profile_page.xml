@@ -48,35 +48,96 @@
             android:src="@android:drawable/btn_star_big_on" />
 
         <ImageButton
-            android:id="@+id/new_tweet"
+            android:id="@+id/newtweet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:src="@android:drawable/ic_input_add" />
 
         <ImageButton
-            android:id="@+id/tweets_at_me"
+            android:id="@+id/imageButton3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:src="@drawable/at_sign_unselected" />
 
         <ImageButton
-            android:id="@+id/all_tweets"
+            android:id="@+id/alltweets"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:src="@android:drawable/sym_action_chat" />
     </LinearLayout>
 
-    <ListView
+      <LinearLayout
+        android:layout_toRightOf="@+id/leftpane"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignParentRight="true"
-        android:layout_toRightOf="@+id/leftpane"
-        android:background="#000000"
-        android:scrollbarStyle="outsideOverlay" >
-
-    </ListView>
+        android:layout_alignParentTop="true"
+        android:background="@drawable/background"
+        android:orientation="vertical" 
+        >
+        
+          <TextView
+            android:id="@+id/this_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="20dp"
+            android:paddingTop="40dp"
+            android:textSize="40sp"
+            android:text="Fname Lname" >
+            <requestFocus android:layout_width="match_parent" />
+        </TextView>
+        
+         <ImageView
+            android:id="@+id/this_avatar"
+            android:layout_width="200dp"
+            android:layout_height="200dp"            
+            android:paddingBottom="20dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/avatar_selected" />
+         
+         <TextView
+            android:id="@+id/user_since"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="24sp"
+            android:text="User since:  March 1 2014" >
+            <requestFocus android:layout_width="match_parent" />
+        </TextView>
+        <TextView
+            android:id="@+id/user_num_tweets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="30dp"
+            android:textSize="24sp"
+            android:text="Total tweets:  87" >
+            <requestFocus android:layout_width="match_parent" />
+        </TextView>
+        
+        <TextView
+            android:id="@+id/user_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="30dp"
+            android:textSize="28sp"
+            android:text="About: I like surfing and playing the ukulele" >
+            <requestFocus android:layout_width="match_parent" />
+        </TextView>
+        
+          
+	    <ListView
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	        android:layout_toRightOf="@+id/leftpane"
+	        android:background="#000000"
+	        android:scrollbarStyle="outsideOverlay" >
+	    </ListView>
+    </LinearLayout>
 
 </RelativeLayout>
