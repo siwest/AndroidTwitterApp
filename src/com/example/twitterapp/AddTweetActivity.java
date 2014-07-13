@@ -11,33 +11,28 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Spinner;
 
-public class SearchActivity extends Activity  {
+public class AddTweetActivity extends Activity  {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.search_page);
+		setContentView(R.layout.add_tweet_page);
+		
+		 
+		//code to add tweets here
 		
 		
 		
-		Spinner trendSpinner = (Spinner) findViewById(R.id.trends);
-		Spinner peopleSpinner = (Spinner) findViewById(R.id.people);
-
-		
-		
-		//trendSpinner.setOnItemSelectedListener(this);
-	
 	}
 	
-	
-	public void goToProfile(View view) {
-		 Intent goToNextActivity = new Intent(getApplicationContext(), ProfileActivity.class);
+
+	 public void goToProfile(View view) {
+		 Intent goToNextActivity = new Intent(getApplicationContext(), AddTweetActivity.class);
 		 startActivity(goToNextActivity);	
 	 }
 	 public void goToAllTweets(View view) {
-		 Intent goToNextActivity = new Intent(getApplicationContext(), SearchActivity.class);
+		 Intent goToNextActivity = new Intent(getApplicationContext(), MainActivity.class);
 		 startActivity(goToNextActivity);	
 	 }
 	 public void goToSearch(View view) {
@@ -48,5 +43,6 @@ public class SearchActivity extends Activity  {
 		 Intent goToNextActivity = new Intent(getApplicationContext(), AddTweetActivity.class);
 		 startActivity(goToNextActivity);	
 	 }
+
 	
 }

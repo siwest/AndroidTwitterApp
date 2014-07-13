@@ -11,7 +11,7 @@
         android:layout_alignParentTop="true"
         android:background="@drawable/background"
         android:orientation="vertical" 
-        android:id="@+id/leftpane">
+        android:id="@+id/leftpane">-->
 
         <ImageButton
             android:id="@+id/myavatar"
@@ -64,7 +64,7 @@
             android:src="@drawable/at_sign_unselected" />
 
         <ImageButton
-            android:id="@+id/all_tweets"
+            android:id="@+id/alltweets"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -72,14 +72,48 @@
             android:onClick="goToAllTweets"/>
     </LinearLayout>
 
-    <ListView
+      <LinearLayout
+        android:layout_toRightOf="@+id/leftpane"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignParentRight="true"
-        android:layout_toRightOf="@+id/leftpane"
-        android:background="#000000"
-        android:scrollbarStyle="outsideOverlay" >
-
-    </ListView>
+        android:layout_alignParentTop="true"
+        android:background="@drawable/background"
+        android:orientation="vertical" 
+        android:padding="50dp"
+        >
+        
+          <EditText
+            android:id="@+id/new_Tweet"
+            android:layout_width="fill_parent"
+            android:layout_height="500dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="5dp"
+            android:textSize="24sp"
+            android:background="#FFFFFF"
+            android:text="Tweet here" >
+            <requestFocus android:layout_width="match_parent" />
+        </EditText>
+        
+          <LinearLayout
+	        android:layout_toRightOf="@+id/leftpane"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignParentTop="true"
+	        android:orientation="vertical" 
+	        android:padding="50dp" >
+            
+	         <Button
+		        android:id="@+id/addButton"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:background="@drawable/post_button" 
+		        android:paddingTop="40dp"
+		        android:onClick="goToAllTweets" />
+         </LinearLayout>
+    </LinearLayout>
 
 </RelativeLayout>

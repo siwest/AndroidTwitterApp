@@ -41,6 +41,10 @@ public class ProfileActivity extends Activity  {
 		 startActivity(goToNextActivity);	
 	
 	 }
+	 public void goToAddTweet(View view) {
+		 Intent goToNextActivity = new Intent(getApplicationContext(), AddTweetActivity.class);
+		 startActivity(goToNextActivity);	
+	 }
 
 	
 }
