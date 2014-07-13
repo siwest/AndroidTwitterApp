@@ -39,7 +39,7 @@ public class LoginActivity extends Activity  {
 		setContentView(R.layout.login_page);
 		
 		 final Button loginButton = (Button) findViewById(R.id.loginButton);
-		 
+		 new BackendTestTask().execute();
 		 
 		 // To do:  method for isLoggedIn?   ==> If true, go to MainActivity to view tweets, else log in
         
@@ -113,4 +113,4 @@ class BackendTestTask extends AsyncTask<Void, Void, String> {
 
 
 
-//new BackendTestTask().execute();
+//
