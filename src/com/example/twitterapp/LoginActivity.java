@@ -27,27 +27,46 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class LoginActivity extends Activity  {
+	
+	String username = "";
+	String password = "";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login_page);
 		
-		 final Button loginButton = (Button) findViewById(R.id.loginButton);
+		
+		 // To do:  method for isLoggedIn?   ==> If true, go to MainActivity to view tweets, else log in
+
+		
+		final TextView usernameTV = (TextView) findViewById(R.id.nameText);		
+		final TextView passwordTV = (TextView) findViewById(R.id.passwordText);
+		
+		username = usernameTV.getText().toString();
+		password = passwordTV.getText().toString();
+		
+		final Button loginButton = (Button) findViewById(R.id.loginButton);
+		
+		 //This is a test. Move this later.
 		 new BackendTestTask().execute();
 		 
-		 // To do:  method for isLoggedIn?   ==> If true, go to MainActivity to view tweets, else log in
         
 		
 	}
 	
 	 public void goToLogin(View view) {
 		 Intent goToNextActivity = new Intent(getApplicationContext(), MainActivity.class);
+		 
+		 // TO DO: authenticate username and password strings
+		 
 		 startActivity(goToNextActivity);	
 	
 	 }
@@ -58,10 +77,10 @@ public class LoginActivity extends Activity  {
 class BackendTestTask extends AsyncTask<Void, Void, String> {
 	@Override
 	protected String doInBackground(Void... params) {
-		Log.v("MainActivity", "test......");
+		//Log.v("MainActivity", "test......");
 		int sessionId = 0;
 		try {			
-			Gson gson = new GsonBuilder().create();
+			com.google.gson.Gson gson = new com.google.gson.GsonBuilder().create();
 			
 			LoginRequest loginRequest = new LoginRequest();
 			loginRequest.setRequestType(Request.REQUEST_TYPE_LOGIN);

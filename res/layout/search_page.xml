@@ -88,60 +88,57 @@
           <EditText
             android:id="@+id/keywords"
             android:layout_width="fill_parent"
-            android:layout_height="200sp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:padding="10dp"
             android:textSize="24sp"
             android:background="#FFFFFF"
-            android:text="   Keywords" >
+            android:text="Keywords" >
             <requestFocus android:layout_width="match_parent" />
         </EditText>
         
         <LinearLayout
 	        android:layout_toRightOf="@+id/leftpane"
-	        android:layout_width="wrap_content"
+	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
 	        android:paddingBottom="30dp"
 	        android:paddingTop="30dp"
 	        android:layout_gravity="center_horizontal"
 	        android:orientation="horizontal"  >
-	         <EditText
+	         <DatePicker
 	            android:id="@+id/start_date"
-	            android:layout_width="200sp"
-	            android:layout_height="100sp"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:scaleY="0.5" 
+				android:scaleX="0.5"
 	            android:layout_gravity="center_horizontal"
 	            android:textSize="24sp"
 	            android:background="#FFFFFF"
 	            android:text="   Start date" >
-	            <requestFocus android:layout_width="match_parent" />
-	        </EditText>
-	        <LinearLayout
-		        android:layout_toRightOf="@+id/leftpane"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:paddingLeft="30dp"
-		        android:orientation="horizontal"  >
-	        <EditText
+	        </DatePicker>
+
+	        <DatePicker
 	            android:id="@+id/end_date"
-	            android:layout_width="200sp"
-	            android:layout_height="100sp"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:scaleY="0.5" 
+				android:scaleX="0.5"
 	            android:layout_gravity="center_horizontal"
 	            android:textSize="24sp"
-	            android:paddingLeft="15dp"
 	            android:background="#FFFFFF"
 	            android:text="   End date" >
-	            <requestFocus android:layout_width="match_parent" />
-	        </EditText>
-	        </LinearLayout>
+	        </DatePicker>
 	    </LinearLayout>
         
         <EditText
             android:id="@+id/location"
             android:layout_width="fill_parent"
-            android:layout_height="100sp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
             android:layout_gravity="center_horizontal"
             android:textSize="24sp"
             android:background="#FFFFFF"
-            android:text="   Zip code" >
+            android:text="Zip code" >
         </EditText>
         
         

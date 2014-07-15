@@ -13,6 +13,6 @@
 	<classpathentry kind="lib" path="/Users/sarahwest/Downloads/httpcomponents-client-4.3.4/lib/commons-logging-1.1.3.jar"/>
 	<classpathentry kind="lib" path="/Users/sarahwest/Downloads/httpcomponents-client-4.3.4/lib/commons-codec-1.6.jar"/>
 	<classpathentry kind="lib" path="/Users/sarahwest/Downloads/commons-io-2.4/commons-io-2.4.jar"/>
-	<classpathentry kind="lib" path="/Users/sarahwest/Downloads/gson-2.2.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/gson-2.2.4.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

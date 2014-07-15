@@ -1,119 +1,37 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
     tools:context="com.example.twitterapp.MainActivity" >
 
-    <LinearLayout
-        android:layout_width="100dp"
-        android:layout_height="fill_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/background"
-        android:orientation="vertical" 
-        android:id="@+id/leftpane">-->
-
-        <ImageButton
-            android:id="@+id/myavatar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/avatar_selected" 
-            android:onClick="goToProfile"/>
-
-        <TextView
-            android:id="@+id/myname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:paddingBottom="50dp"
-            android:textSize="10sp"
-            android:text="Fname Lname" 
-            android:onClick="goToProfile">
-            <requestFocus android:layout_width="match_parent" />
-        </TextView>
-
-        <ImageButton
-            android:id="@+id/search"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/abc_ic_search" 
-            android:onClick="goToSearch"/>
-
-        <ImageButton
-            android:id="@+id/fav"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:src="@android:drawable/btn_star_big_on" />
-
-        <ImageButton
-            android:id="@+id/newtweet"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:src="@android:drawable/ic_input_add" 
-            android:onClick="goToAddTweet"/>
-
-        <ImageButton
-            android:id="@+id/tweets_at_me"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/at_sign_unselected" />
-
-        <ImageButton
-            android:id="@+id/alltweets"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:src="@android:drawable/sym_action_chat" 
-            android:onClick="goToAllTweets"/>
-    </LinearLayout>
-
-      <LinearLayout
-        android:layout_toRightOf="@+id/leftpane"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/background"
-        android:orientation="vertical" 
-        android:padding="50dp"
-        >
+    
         
           <EditText
             android:id="@+id/new_Tweet"
             android:layout_width="fill_parent"
-            android:layout_height="500dp"
+            android:layout_height="400dp"
             android:paddingBottom="5dp"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:paddingTop="5dp"
-            android:textSize="24sp"
-            android:background="#FFFFFF"
-            android:text="Tweet here" >
+            android:textSize="20sp"
+            android:text=""
+            android:gravity="top"
+            android:background="#FFFFFF" >
             <requestFocus android:layout_width="match_parent" />
         </EditText>
         
-          <LinearLayout
-	        android:layout_toRightOf="@+id/leftpane"
+          
+            
+         <ImageButton
+	        android:id="@+id/addButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_alignParentRight="true"
-	        android:layout_alignParentTop="true"
-	        android:orientation="vertical" 
-	        android:padding="50dp" >
-            
-	         <Button
-		        android:id="@+id/addButton"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:background="@drawable/post_button" 
-		        android:paddingTop="40dp"
-		        android:onClick="goToAllTweets" />
-         </LinearLayout>
-    </LinearLayout>
+	        android:background="@drawable/post_button" 
+	        android:paddingTop="40dp" 
+	       />
 
-</RelativeLayout>
+</LinearLayout>

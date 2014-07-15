@@ -14,25 +14,23 @@
         android:orientation="horizontal" 
         android:background="#000000"
         android:paddingTop="100sp">
-
-        <ImageView
-            android:id="@+id/nameLabel"
-            android:src="@drawable/username_label" 
-            android:layout_width="wrap_content"
+  
+		<TextView 
+		    android:id="@+id/nameLabel"
+          	android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="User Name"
-            android:textSize="20sp"
-            />
+            android:padding="2dp"
+            android:textColor="#a0cdfa"
+            android:text="User name   "
+            android:textSize="30sp" />
        
         <EditText
             android:id="@+id/nameText"
             android:layout_width="300sp"
-            android:layout_height="44dp"
-            android:padding="2dp"
-            android:text="Enter user name"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
             android:background="#FFFFFF"
-            android:textSize="20sp" />
+            android:textSize="24sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -45,21 +43,22 @@
         android:paddingTop="30sp"
         android:paddingBottom="100sp">
 
-       <ImageView
-            android:id="@+id/passwordLabel"
-            android:src="@drawable/password_label" 
-            android:layout_width="wrap_content"
+
+       <TextView 
+          android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"/>
+            android:padding="2dp"
+            android:textColor="#a0cdfa"
+            android:text="Password    "
+            android:textSize="30sp" />
 
         <EditText
             android:id="@+id/passwordText"
             android:layout_width="300sp"
-            android:layout_height="44dp"
-            android:padding="2dp"
-            android:text="Enter password"
+            android:layout_height="wrap_content"
+            android:paddingLeft="2dp"
             android:background="#FFFFFF"
-            android:textSize="20sp" />
+            android:textSize="24sp" />
     </LinearLayout>
 
     <Button
