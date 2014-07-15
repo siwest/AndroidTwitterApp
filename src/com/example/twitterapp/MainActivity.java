@@ -13,77 +13,66 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity  {
 	public Dialog dialog;
+	ListView lv;
+    String[] planets = new String[] { "Tweet1 tweet1 tweet1", "Tweet2 tweet2 tweet2", "Tweet3 tweet3 tweet3", "Tweet4 tweet4 tweet4" };   
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
 		
-		final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-	    // Get the layout inflater
-	    final LayoutInflater inflater = this.getLayoutInflater();
+		lv=(ListView) findViewById(R.id.list_view);
 		
 		
-		ImageButton addTweetButton = (ImageButton) findViewById(R.id.newtweet);
-		addTweetButton.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				
+	    ListAdapter mylist;
+	    
+	    ArrayAdapter adapter = new ArrayAdapter(this, R.layout.tweet_list_item, R.id.tweet, planets);
+	    
+	    lv.setAdapter(adapter);
+	    
+        lv.setOnItemClickListener(new OnItemClickListener() {
 
-			    // Inflate and set the layout for the dialog
-			    // Pass null as the parent view because its going in the dialog layout
-			    builder.setView(inflater.inflate(R.layout.add_tweet_page, null))
-			    // Add action buttons
-			           .setPositiveButton("Post", new DialogInterface.OnClickListener() {
-			               @Override
-			               public void onClick(DialogInterface dialog, int id) {
-			                   // sign in the user ...
-			               }
-			           });      
-			    builder.create();
-				
-			}
-		});
-		
-		
-		
-		
-		
-		
-		
-		
-	/*	 final ListView listview = (ListView) findViewById(R.id.tweet);
-		 
-		  
+          @Override
+          public void onItemClick(AdapterView<?> arg0, View arg1,
+                  int position, long arg3) {
+        	  
+        	  // To do: Toggle star on/off for each list item when clicked (Currently set only the first one on)
+        	  ImageView starButton = (ImageView) findViewById(R.id.star);
+        	  starButton.setBackgroundResource(android.R.drawable.star_big_on);
+        	 
+               int itemPosition     = position;
+               
 
-		 final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-			        android.R.layout.simple_list_item_1, list);
-			    listview.setAdapter(adapter);
-			    
-			    
-			    
-			    // Define a new Adapter
-	            // First parameter - Context
-	            // Second parameter - Layout for the row
-	            // Third parameter - ID of the TextView to which the data is written
-	            // Forth - the Array of data
+                 // ListView Clicked item value
+                 String  itemValue    = (String) lv.getItemAtPosition(position);
+
+                  // Show Alert - for testing
+                  Toast.makeText(getApplicationContext(),
+                    "Position :"+itemPosition+"  ListItem : " +itemValue , Toast.LENGTH_LONG)
+                    .show();
+                  
+                  
+          }
+      });
+
 	    
-	            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-	              android.R.layout.simple_list_item_1, android.R.id.text1, values);
-	    
-	    
-	            // Assign adapter to ListView
-	            listView.setAdapter(adapter); 
-	            */	    
+		
+		
+		
+	
 		
 	}
 	

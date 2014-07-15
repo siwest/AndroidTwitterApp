@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
     android:orientation="vertical" >
 
     <LinearLayout
@@ -14,7 +15,7 @@
         	    android:layout_width="wrap_content"
         	    android:layout_height="wrap_content"
         	    android:gravity="left"
-        	    android:paddingRight="80dp"
+        	    android:layout_weight="0.85"
         	    android:orientation="vertical" >
         
 			        <ImageView
@@ -26,35 +27,34 @@
 				        android:id="@+id/byuser"
 				        android:layout_width="wrap_content"
 				        android:layout_height="wrap_content" 
+				        android:textSize="20sp"
+				        android:textColor="#a0cdfa"
 				        android:text="username">
 				        <requestFocus />
    				 	</TextView>
-   			
+   			 
    			</LinearLayout>
-
-        	<ImageView
-        	    android:id="@+id/star"
+			<LinearLayout
         	    android:layout_width="wrap_content"
         	    android:layout_height="wrap_content"
-        	    android:src="@android:drawable/star_big_off" />
-		        
-    	</LinearLayout>
-    
-	
-
-    	<LinearLayout
-    	    	android:paddingTop="10dp"
-        	    android:layout_width="wrap_content"
-        	    android:layout_height="wrap_content"
-        	    android:gravity="left"
-        	    android:orientation="horizontal" >
-			       
-    	    		<TextView
+        	    android:layout_gravity="center"
+        	    android:gravity="center"
+        	    android:orientation="vertical" >
+			        
+	        	<ImageView
+	        	    android:id="@+id/star"
+	        	    android:layout_width="wrap_content"
+	        	    android:layout_height="wrap_content"
+	        	    android:paddingBottom="10dp"
+	        	    android:background="@android:drawable/star_big_off" />
+	        	
+        		<TextView                
 				        android:id="@+id/touser"
-				        android:paddingRight="30dp"
 				        android:layout_width="wrap_content"
-				        android:layout_height="wrap_content" 
-				        android:text="/@username">
+				        android:layout_height="wrap_content"
+				        android:textSize="18sp" 
+				        android:textColor="#c1f5f7"
+				        android:text="\@username">
 				        <requestFocus />
 				    </TextView>
    				  
@@ -62,19 +62,26 @@
 				        android:id="@+id/date"
 				        android:layout_width="wrap_content"
 				        android:layout_height="wrap_content" 
+				        android:textSize="18sp"
+				        android:textColor="#79edf1"
 				        android:text="2014-03-13">
 				        <requestFocus />
 				    </TextView>
-			    
-
-      		</LinearLayout>
+        	</LinearLayout>
+		        
+    	</LinearLayout>
     
+	
+
+
     
     <TextView
         android:paddingTop="10dp"
         android:id="@+id/tweet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" 
+        android:textSize="24sp"
+        android:textColor="#a0cdfa"
         android:text="tweet tweet tweet tweet">
 		
         <requestFocus />
