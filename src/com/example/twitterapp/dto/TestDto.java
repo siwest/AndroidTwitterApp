@@ -143,6 +143,40 @@ public class TestDto {
 		} else {
 			Log.e("TestDto", "Error getting repsonse. StatusCode: " + statusCode);
 		}		
+	} 
+	
+	public void testUserProfile(int userId) {		
+		GetUserProfileRequest getUserProfileRequest = new GetUserProfileRequest();
+		getUserProfileRequest.setUserId(userId);
+	
+		com.google.gson.Gson gson = new com.google.gson.GsonBuilder().create();
+		
+		HttpClient httpclient = new DefaultHttpClient();		
+		HttpPost httpPost = new HttpPost(SERVER_URL);
+		httpPost.setHeader("Content-type", "application/json");
+		httpPost.setEntity(new StringEntity(gson.toJson(getUserProfileRequest)));  
+		HttpResponse httpResponse = httpclient.execute(httpPost);
+		
+		StatusLine statusLine = httpResponse.getStatusLine();
+		int statusCode = statusLine.getStatusCode();
+		if (statusCode == 200) {				
+			HttpEntity entity = httpResponse.getEntity();
+			InputStream content = entity.getContent();
+			Reader reader = new InputStreamReader(content);
+			GetUserProfileResponse getUserProfileResponse = gson.fromJson(reader, GetUserProfileResponse.class);
+			if(getUserProfileResponse.isSuccess()) {
+				// Display following user profile data
+				getUserProfileResponse.getUserProfile().getUser();
+				getUserProfileResponse.getUserProfile().getTweetList();
+				getUserProfileResponse.getUserProfile().getFollowingUserList();
+				getUserProfileResponse.getUserProfile().getFollowedUserList();
+			} else {
+				// Show error message in the app
+				getUserProfileResponse.getErrorMessage();
+			}
+		} else {
+			Log.e("TestDto", "Error getting repsonse. StatusCode: " + statusCode);
+		}		
 	}
 }
 
