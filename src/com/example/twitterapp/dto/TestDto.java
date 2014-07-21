@@ -1,13 +1,16 @@
 package com.example.twitterapp.dto;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.StatusLine;
+import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
@@ -20,7 +23,7 @@ public class TestDto {
 	private static final String SERVER_URL = "http://54.186.56.83:8080/twitter/TwitterServlet";
 	
 	
-	public void testLogin(String username, String password) {		
+	public void testLogin(String username, String password) throws IllegalStateException, IOException {		
 		LoginRequest loginRequest = new LoginRequest();
 		loginRequest.setUsername(username);
 		loginRequest.setPassword(password);
@@ -53,7 +56,7 @@ public class TestDto {
 		}		
 	}
 	
-	public void testAddTweet(int userId, String tweet) {		
+	public void testAddTweet(int userId, String tweet) throws ClientProtocolException, IOException {		
 		AddTweetRequest addTweetRequest = new AddTweetRequest();
 		addTweetRequest.setUserId(userId);
 		addTweetRequest.setTweetData(tweet);
@@ -84,7 +87,7 @@ public class TestDto {
 		}		
 	}
 	
-	public void testGetTrendingTweets() {		
+	public void testGetTrendingTweets() throws ClientProtocolException, IOException {		
 		GetTrendingTweetsRequest getTrendingTweetsRequest = new GetTrendingTweetsRequest();
 	
 		com.google.gson.Gson gson = new com.google.gson.GsonBuilder().create();
@@ -114,7 +117,7 @@ public class TestDto {
 		}		
 	}
 	
-	public void testGetTweetsByUserId(int userId) {		
+	public void testGetTweetsByUserId(int userId) throws ClientProtocolException, IOException {		
 		GetTweetsByUserIdRequest getTweetsByUserIdRequest = new GetTweetsByUserIdRequest();
 		getTweetsByUserIdRequest.setUserId(userId);
 	
@@ -145,7 +148,7 @@ public class TestDto {
 		}		
 	} 
 	
-	public void testUserProfile(int userId) {		
+	public void testUserProfile(int userId) throws IllegalStateException, IOException {		
 		GetUserProfileRequest getUserProfileRequest = new GetUserProfileRequest();
 		getUserProfileRequest.setUserId(userId);
 	
@@ -164,16 +167,19 @@ public class TestDto {
 			InputStream content = entity.getContent();
 			Reader reader = new InputStreamReader(content);
 			GetUserProfileResponse getUserProfileResponse = gson.fromJson(reader, GetUserProfileResponse.class);
-			if(getUserProfileResponse.isSuccess()) {
+		
+			
+			//SW: This if statement isn't working, so I commented it out
+			//	if(getUserProfileResponse.isSuccess()) {
 				// Display following user profile data
 				getUserProfileResponse.getUserProfile().getUser();
 				getUserProfileResponse.getUserProfile().getTweetList();
 				getUserProfileResponse.getUserProfile().getFollowingUserList();
 				getUserProfileResponse.getUserProfile().getFollowedUserList();
-			} else {
+		//	} else {
 				// Show error message in the app
-				getUserProfileResponse.getErrorMessage();
-			}
+			//	getUserProfileResponse.getErrorMessage();
+		//	}
 		} else {
 			Log.e("TestDto", "Error getting repsonse. StatusCode: " + statusCode);
 		}		

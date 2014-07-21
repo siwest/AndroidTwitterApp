@@ -106,8 +106,8 @@ class BackendTestTask extends AsyncTask<Void, Void, String> {
 				InputStream content = entity.getContent();
 				Reader reader = new InputStreamReader(content);
 				LoginResponse loginResponse = gson.fromJson(reader, LoginResponse.class);
-				Log.v("MainActivity", "sessionId: " + loginResponse.getSessionId());
-				sessionId = loginResponse.getSessionId();
+				Log.v("MainActivity", "sessionId: " + loginResponse.getUserId());
+				sessionId = loginResponse.getUserId();
 			} else {
 				Log.e("MainActivity", "Error getting repsonse. StatusCode: " + statusCode);
 			}

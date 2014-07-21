@@ -25,6 +25,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity  {
+	String addTweetText = "";
+	String searchText = "";
 	public Dialog dialog;
 	ListView lv;
     String[] planets = new String[] { "Tweet1 tweet1 tweet1", "Tweet2 tweet2 tweet2", "Tweet3 tweet3 tweet3", "Tweet4 tweet4 tweet4" };   
@@ -88,10 +90,26 @@ public class MainActivity extends Activity  {
 	
 	 }
 	 public void goToSearch(View view) {
-		 Intent goToNextActivity = new Intent(getApplicationContext(), SearchActivity.class);
-		 startActivity(goToNextActivity);	
-	
-	 }
+			dialog = new Dialog(MainActivity.this);
+			dialog.setContentView(R.layout.add_tweet_page);
+			dialog.setTitle("Search all tweets");
+			dialog.setCancelable(true);
+			dialog.show();
+			
+			// TO DO: Need method to search tweet database and show keyword matches to tweet activities
+	/*		final EditText search = (EditText) dialog.findViewById(R.id.search_text);
+			
+			
+			ImageButton searchButton = (ImageButton) dialog.findViewById(R.id.search_button);	
+			searchButton.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					searchText = search.getText().toString();
+					dialog.dismiss();
+				}
+			});*/
+
+		 }
 	 
 	 public void goToAddTweet(View view) {
 			dialog = new Dialog(MainActivity.this);
@@ -101,24 +119,20 @@ public class MainActivity extends Activity  {
 			dialog.show();
 			
 			// TO DO: Need method to add tweet to database and post to tweet activities
-			//EditText tweetText = (EditText) findViewById(R.id.new_Tweet);
-			//String addTweetText = tweetText.getText().toString();
+			final EditText tweetText = (EditText) dialog.findViewById(R.id.new_tweet);
 			
-			/*
-			ImageButton addTweetButton = (ImageButton) findViewById(R.id.addButton);	
+			
+			
+			ImageButton addTweetButton = (ImageButton) dialog.findViewById(R.id.add_button);	
 			addTweetButton.setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v) {
+					addTweetText = tweetText.getText().toString();
 					dialog.dismiss();
 				}
-			});*/
+			});
 
 		 }
-	
-	
-	
-	
-	
 	
 	
 	
