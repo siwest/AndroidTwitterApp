@@ -178,6 +178,37 @@ public class TestDto {
 			Log.e("TestDto", "Error getting repsonse. StatusCode: " + statusCode);
 		}		
 	}
+	
+	public void testSearchTweet(String searchString) {		
+		SearchTweetRequest searchTweetRequest = new SearchTweetRequest();
+		searchTweetRequest.setSearchString(searchString);
+	
+		com.google.gson.Gson gson = new com.google.gson.GsonBuilder().create();
+		
+		HttpClient httpclient = new DefaultHttpClient();		
+		HttpPost httpPost = new HttpPost(SERVER_URL);
+		httpPost.setHeader("Content-type", "application/json");
+		httpPost.setEntity(new StringEntity(gson.toJson(searchTweetRequest)));  
+		HttpResponse httpResponse = httpclient.execute(httpPost);
+		
+		StatusLine statusLine = httpResponse.getStatusLine();
+		int statusCode = statusLine.getStatusCode();
+		if (statusCode == 200) {				
+			HttpEntity entity = httpResponse.getEntity();
+			InputStream content = entity.getContent();
+			Reader reader = new InputStreamReader(content);
+			SearchTweetResponse searchTweetResponse = gson.fromJson(reader, SearchTweetResponse.class);
+			if(searchTweetResponse.isSuccess()) {
+				// Display following tweet list in the app
+				List<Tweet> tweetList = searchTweetResponse.getTweetList();
+			} else {
+				// Show error message in the app
+				searchTweetResponse.getErrorMessage();
+			}
+		} else {
+			Log.e("TestDto", "Error getting repsonse. StatusCode: " + statusCode);
+		}		
+	}
 }
 
 
